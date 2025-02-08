@@ -1,0 +1,26 @@
+<svg viewBox="0 0 600 160" xmlns="http://www.w3.org/2000/svg">
+  <!-- Stylized 'N' shape -->
+  <path d="M40 15 L60 65 L80 15 M80 15 L60 65 L100 65" 
+        stroke="#2563eb" 
+        stroke-width="8" 
+        fill="none" 
+        stroke-linecap="round"
+        stroke-linejoin="round"/>
+  
+  <!-- Store name -->
+  <text x="120" y="50" 
+        font-family="Arial, sans-serif" 
+        font-size="36" 
+        font-weight="bold" 
+        fill="#1e293b">
+    Nexus
+  </text>
+  
+  <!-- Tagline -->
+  <text x="120" y="70" 
+        font-family="Arial, sans-serif" 
+        font-size="16" 
+        fill="#64748b">
+    Nook
+  </text>
+</svg>
