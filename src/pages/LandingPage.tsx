@@ -6,11 +6,13 @@ import Testimonials from "../components/Testimonials";
 
 const LandingPage = () => {
   return (
-    <div className="min-h-screen flex flex-col font-poppins px-4">
+    <div className="min-h-screen flex flex-col font-poppins">
       <Nav />
-      <Banner />
-      <ProductsList />
-      <Testimonials />
+      <main className="px-4">
+        <Banner />
+        <ProductsList />
+        <Testimonials />
+      </main>
       <Footer />
     </div>
   );

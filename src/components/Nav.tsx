@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   ShoppingCartIcon,
   Bars3Icon,
@@ -6,13 +7,17 @@ import {
 } from "@heroicons/react/24/outline";
 
 const Nav = () => {
+  let navigate = useNavigate();
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <nav className="w-full bg-white shadow-md py-4">
+    <nav className="w-full bg-gray-900 py-4 bg-[hsl(210,36%,96%)">
       <div className="flex items-center justify-between">
         {/* Logo */}
-        <div className="cursor-pointer flex items-center">
+        <div
+          className="flex items-center cursor-pointer"
+          onClick={() => navigate("/")}
+        >
           <h1 className="text-lg font-bold">
             <span className="text-blue-600">Nexus</span> Nook
           </h1>
@@ -31,12 +36,21 @@ const Nav = () => {
           </li>
         </ul>
 
-        {/* Cart Icon with Badge */}
-        <div className="relative hidden md:flex gap-6 w-8 h-8 cursor-pointer">
-          <ShoppingCartIcon className="w-full h-full text-gray-800" />
-          <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs font-bold px-2 py-0.5 rounded-full">
-            3
-          </span>
+        {/* Cart  and Login Button*/}
+        <div className="hidden md:flex md:items-center md:justify-between gap-2">
+          <div
+            className="relative  gap-6 w-8 h-8 cursor-pointer"
+            onClick={() => navigate("/Cart")}
+          >
+            <ShoppingCartIcon className="w-full h-full text-gray-800" />
+            <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs font-bold px-2 py-0.5 rounded-full">
+              3
+            </span>
+          </div>
+
+          <button className="bg-black cursor-pointer px-6 py-2 bg-neutral-white text-white rounded-full sm:hover:bg-opacity-35 transition-all duration-300 ease-in-out">
+            Admin Login
+          </button>
         </div>
 
         <button
@@ -71,6 +85,9 @@ const Nav = () => {
               </span>
             </div>
           </li>
+          <button className="bg-black cursor-pointer px-6 py-2 bg-neutral-white text-white rounded-full sm:hover:bg-opacity-35 transition-all duration-300 ease-in-out">
+            Admin Login
+          </button>
         </ul>
       )}
     </nav>
