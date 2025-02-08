@@ -61,7 +61,7 @@ const Nav = () => {
             <a href="#">Services</a>
           </li>
           <li className="cursor-pointer hover:underline">
-            <a href="#">FAQs</a>
+            <a href="#">FAQss</a>
           </li>
           <li>
             <div className="relative w-8 h-8 cursor-pointer">

@@ -10,7 +10,7 @@ const ProductsList = () => {
   }, []);
 
   return (
-    <div className="p-4 w-full flex items-center flex-col bg-amber-950 border-2 border-black">
+    <div className="py-4 w-full flex items-center flex-col">
       <div>
         <h1 className="text-2xl font-bold mb-4">Products</h1>
       </div>
