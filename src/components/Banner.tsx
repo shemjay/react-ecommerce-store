@@ -19,7 +19,7 @@ const Banner = () => {
   }, []);
 
   return (
-    <div className="relative w-full overflow-hidden bg-blue-600 text-white text-center py-4">
+    <div className="relative w-full overflow-hidden bg-blue-600 text-white text-center py-4 m-2">
       <motion.div
         key={currentIndex}
         initial={{ opacity: 0, y: 20 }}

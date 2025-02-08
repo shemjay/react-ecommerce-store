@@ -5,13 +5,15 @@ import {
   Bars3Icon,
   XMarkIcon,
 } from "@heroicons/react/24/outline";
+import { useCartStore } from "../store/useCart";
 
 const Nav = () => {
+  const cart = useCartStore((state) => state.cart);
   let navigate = useNavigate();
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <nav className="w-full bg-gray-900 py-4 bg-[hsl(210,36%,96%)">
+    <nav className="w-full bg-gray-900 p-4 bg-[hsl(210,36%,96%)">
       <div className="flex items-center justify-between">
         {/* Logo */}
         <div
@@ -24,7 +26,7 @@ const Nav = () => {
         </div>
 
         {/* Desktop Menu */}
-        <ul className="hidden md:flex gap-6 text-gray-700">
+        <ul className="hidden md:flex gap-6 text-white">
           <li className="cursor-pointer hover:underline">
             <a href="#">About</a>
           </li>
@@ -42,13 +44,20 @@ const Nav = () => {
             className="relative  gap-6 w-8 h-8 cursor-pointer"
             onClick={() => navigate("/Cart")}
           >
-            <ShoppingCartIcon className="w-full h-full text-gray-800" />
+            <ShoppingCartIcon className="w-full h-full text-white" />
             <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs font-bold px-2 py-0.5 rounded-full">
-              3
+              {cart.length > 0 ? (
+                <span>{cart[0].quantity}</span>
+              ) : (
+                <span>0</span>
+              )}
             </span>
           </div>
 
-          <button className="bg-black cursor-pointer px-6 py-2 bg-neutral-white text-white rounded-full sm:hover:bg-opacity-35 transition-all duration-300 ease-in-out">
+          <button
+            onClick={() => navigate("/AdminLogin")}
+            className="bg-black cursor-pointer px-6 py-2 bg-neutral-white text-white rounded-full sm:hover:bg-opacity-35 transition-all duration-300 ease-in-out"
+          >
             Admin Login
           </button>
         </div>
@@ -67,7 +76,7 @@ const Nav = () => {
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <ul className="md:hidden flex flex-col items-center gap-4 mt-4 text-gray-700">
+        <ul className="md:hidden flex flex-col items-center gap-4 mt-4 text-white">
           <li className="cursor-pointer hover:underline">
             <a href="#">About</a>
           </li>
@@ -78,14 +87,20 @@ const Nav = () => {
             <a href="#">FAQss</a>
           </li>
           <li>
-            <div className="relative w-8 h-8 cursor-pointer">
-              <ShoppingCartIcon className="w-full h-full text-gray-800" />
+            <div
+              className="relative w-8 h-8 cursor-pointer"
+              onClick={() => navigate("/Cart")}
+            >
+              <ShoppingCartIcon className="w-full h-full text-white" />
               <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs font-bold px-2 py-0.5 rounded-full">
                 3
               </span>
             </div>
           </li>
-          <button className="bg-black cursor-pointer px-6 py-2 bg-neutral-white text-white rounded-full sm:hover:bg-opacity-35 transition-all duration-300 ease-in-out">
+          <button
+            onClick={() => navigate("/AdminLogin")}
+            className="bg-black cursor-pointer px-6 py-2 bg-neutral-white text-white rounded-full sm:hover:bg-opacity-35 transition-all duration-300 ease-in-out"
+          >
             Admin Login
           </button>
         </ul>

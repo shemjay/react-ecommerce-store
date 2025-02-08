@@ -48,8 +48,8 @@ const ProductsList = () => {
                         id: product.id,
                         name: product.name,
                         price: product.price,
-                        image: product.images[0]?.url || "", // Ensure image is a string
-                        quantity: (cartItem?.quantity || 0) + 1, // Default to 1 if not in cart
+                        image: product.images[0]?.url || "",
+                        quantity: (cartItem?.quantity || 0) + 1,
                       })
                     }
                     className="px-2 py-1 bg-gray-200"
