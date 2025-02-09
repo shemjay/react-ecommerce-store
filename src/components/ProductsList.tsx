@@ -8,7 +8,9 @@ const ProductsList = () => {
   const { addToCart, updateQuantity, cart } = useCartStore();
 
   useEffect(() => {
-    fetchProducts().then(setProducts);
+    if (products.length === 0) {
+      fetchProducts().then(setProducts);
+    }
   }, []);
 
   return (
@@ -26,8 +28,11 @@ const ProductsList = () => {
                 alt={product.name}
                 className="h-auto w-full object-cover"
               />
-              <h2 className="font-semibold">{product.name}</h2>
-              <p>${product.price}</p>
+              <h2 className="font-semibold">
+                <span>Description: </span>
+                {product.name}
+              </h2>
+              <p>Price: ${product.price}</p>
               {cartItem ? (
                 <div className="flex items-center gap-2 mt-2">
                   <button
@@ -37,7 +42,7 @@ const ProductsList = () => {
                         Math.max(0, cartItem.quantity - 1)
                       )
                     }
-                    className="px-2 py-1 bg-gray-200"
+                    className="px-2 py-1 bg-gray-200 cursor-pointer"
                   >
                     -
                   </button>

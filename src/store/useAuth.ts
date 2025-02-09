@@ -10,7 +10,7 @@ export const useAuthStore = create<AuthStore>((set) => ({
   user: localStorage.getItem("adminUser") || null,
 
   login: (username, password) => {
-    if (username === "admin" && password === "password") {
+    if (username === "admin" && password === "$admin$123") {
       localStorage.setItem("adminUser", username);
       set({ user: username });
       return true;
