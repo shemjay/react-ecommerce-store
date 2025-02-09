@@ -31,14 +31,14 @@ const AdminLogin = () => {
           <form onSubmit={handleSubmit} className="flex flex-col gap-2">
             <input
               type="text"
-              placeholder="Username"
+              placeholder="Username is admin"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
               className="border p-2 rounded"
             />
             <input
               type="password"
-              placeholder="Password"
+              placeholder="Password is $admin$123"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               className="border p-2 rounded"

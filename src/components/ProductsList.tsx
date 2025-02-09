@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { fetchProducts } from "../api/products";
 import { useProductStore } from "../store/useProductStore";
 import { useCartStore } from "../store/useCart";
@@ -9,22 +9,50 @@ const ProductsList = () => {
   const { products, setProducts } = useProductStore();
   const { addToCart, updateQuantity, cart } = useCartStore();
 
+  // State for price filtering
+  const [priceRange, setPriceRange] = useState("all");
+
   useEffect(() => {
     if (products.length === 0) {
       fetchProducts().then(setProducts);
     }
   }, []);
 
+  // Filtered products based on selected price range
+  const filteredProducts = products.filter((product) => {
+    if (priceRange === "all") return true;
+    if (priceRange === "low") return product.price < 50;
+    if (priceRange === "medium")
+      return product.price >= 50 && product.price <= 100;
+    if (priceRange === "high") return product.price > 100;
+    return true;
+  });
+
   return (
     <div className="py-4 w-full flex items-center flex-col">
-      <div>
-        <h1 className="text-2xl font-bold mb-4">Products</h1>
+      <h1 className="text-2xl font-bold mb-4">Products</h1>
+
+      {/* Price Filter Dropdown */}
+      <div className="mb-4">
+        <label className="mr-2 font-semibold">Filter by Price:</label>
+        <select
+          value={priceRange}
+          onChange={(e) => setPriceRange(e.target.value)}
+          className="p-2 border rounded"
+        >
+          <option value="all">All Prices</option>
+          <option value="low">Below $50</option>
+          <option value="medium">$50 - $100</option>
+          <option value="high">Above $100</option>
+        </select>
       </div>
+
+      {/* Display Filtered Products */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-        {products.map((product) => {
+        {filteredProducts.map((product) => {
           const cartItem = cart.find((item) => item.id === product.id);
           return (
-            <div key={product.id} className="border p-4">
+            <div key={product.id} className="border p-4 rounded-lg shadow-lg">
               <img
                 src={product.images[0]?.url}
                 alt={product.name}

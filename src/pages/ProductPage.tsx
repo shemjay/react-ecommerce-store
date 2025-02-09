@@ -24,7 +24,7 @@ const ProductPage = () => {
   return (
     <>
       <Nav />
-      <div className="p-4 max-w-4xl mx-auto border-2 border-gray-600 m-2 rounded-lg">
+      <div className="p-4 max-w-4xl mx-auto border-2 my-8 border-gray-600 m-2 rounded-lg shadow-lg">
         <img
           src={product.images[0]?.url}
           alt={product.name}

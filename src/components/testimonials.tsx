@@ -6,8 +6,8 @@ import Emily from "../images/image-emily.jpg";
 
 const Testimonials = () => {
   return (
-    <div className="w-full flex items-center flex-col py-4 gap-8 bg-[hsl(210,36%,96%)] text-[hsl(217,19%,35%)]">
-      <h1 className="font-Fraunces font-bold text-center text-2xl uppercase text-neutral-darkGrayishBlue tracking-widest">
+    <div className="w-full flex items-center flex-col py-12 gap-8 bg-[hsl(210,36%,96%)] text-[hsl(217,19%,35%)]">
+      <h1 className="font-bold text-center text-2xl uppercase tracking-widest">
         Client Testimonials
       </h1>
 
@@ -17,7 +17,7 @@ const Testimonials = () => {
           <div className="overflow-hidden rounded-full w-16">
             <img className="w-16 object-cover" src={Emily} alt="" />
           </div>
-          <div className=" text-neutral-veryDarkGrayishBlue text-center">
+          <div className=" text-center">
             "Absolutely love the quality of the products! Fast shipping and
             great customer service."
           </div>
@@ -29,8 +29,8 @@ const Testimonials = () => {
             <StarIconEmpty className="w-5 h-5" />
           </div>
           <div className="text-center">
-            <p className="font-Fraunces font-bold text-lg">Emily R.</p>
-            <p className="text-neutral-darkGrayishBlue font-bold ">Customer</p>
+            <p className="font-bold text-lg">Emily R.</p>
+            <p className="font-bold ">Customer</p>
           </div>
         </div>
 
@@ -40,7 +40,7 @@ const Testimonials = () => {
             <img className="w-16 object-cover" src={Thomas} alt="" />
           </div>
 
-          <div className=" text-neutral-veryDarkGrayishBlue text-center">
+          <div className=" text-center">
             "Selling on Nexus Nook has been amazing! The platform is easy to
             use, and customer support is top-notch."
           </div>
@@ -52,8 +52,8 @@ const Testimonials = () => {
             <StarIcon className="w-5 h-5 text-yellow-500" />
           </div>
           <div className="text-center">
-            <p className="font-Fraunces font-bold text-lg">Thomas S.</p>
-            <p className="text-neutral-darkGrayishBlue font-bold ">Seller</p>
+            <p className="font-bold text-lg">Thomas S.</p>
+            <p className="font-bold ">Seller</p>
           </div>
         </div>
 
@@ -63,7 +63,7 @@ const Testimonials = () => {
             <img className="w-16 object-cover" src={Jennie} alt="" />
           </div>
 
-          <div className=" text-neutral-veryDarkGrayishBlue text-center">
+          <div className=" text-center">
             "Nexus Nook never disappoints! The deals are unbeatable, and the
             checkout process is smooth."
           </div>
@@ -75,8 +75,8 @@ const Testimonials = () => {
             <StarIcon className="w-5 h-5 text-yellow-500" />
           </div>
           <div className="text-center">
-            <p className="font-Fraunces font-bold text-lg">Jennie F.</p>
-            <p className="text-neutral-darkGrayishBlue font-bold ">Customer</p>
+            <p className="font-bold text-lg">Jennie F.</p>
+            <p className="font-bold ">Customer</p>
           </div>
         </div>
       </div>
