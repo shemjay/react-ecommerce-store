@@ -1,7 +1,7 @@
 import ProductsList from "../components/ProductsList";
 import Nav from "../components/Nav";
-import Testimonials from "../components/Testimonials";
 import Footer from "../components/Footer";
+import Testimonial from "../components/Testimonial";
 
 const LandingPage = () => {
   return (
@@ -9,7 +9,7 @@ const LandingPage = () => {
       <Nav />
       <main className="px-4">
         <ProductsList />
-        <Testimonials />
+        <Testimonial />
       </main>
       <Footer />
     </div>

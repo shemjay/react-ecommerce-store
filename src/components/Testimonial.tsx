@@ -4,7 +4,7 @@ import Jennie from "../images/image-jennie.jpg";
 import Thomas from "../images/image-thomas.jpg";
 import Emily from "../images/image-emily.jpg";
 
-const Testimonials = () => {
+const Testimonial = () => {
   return (
     <div className="w-full flex items-center flex-col py-12 gap-8 bg-[hsl(210,36%,96%)] text-[hsl(217,19%,35%)]">
       <h1 className="font-bold text-center text-2xl uppercase tracking-widest">
@@ -84,4 +84,4 @@ const Testimonials = () => {
   );
 };
 
-export default Testimonials;
+export default Testimonial;
