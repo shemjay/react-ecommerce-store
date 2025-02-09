@@ -9,7 +9,6 @@ const ProductsList = () => {
   const { products, setProducts } = useProductStore();
   const { addToCart, updateQuantity, cart } = useCartStore();
 
-  // State for price filtering
   const [priceRange, setPriceRange] = useState("all");
 
   useEffect(() => {
@@ -18,7 +17,6 @@ const ProductsList = () => {
     }
   }, []);
 
-  // Filtered products based on selected price range
   const filteredProducts = products.filter((product) => {
     if (priceRange === "all") return true;
     if (priceRange === "low") return product.price < 50;
@@ -78,7 +76,7 @@ const ProductsList = () => {
                         Math.max(0, cartItem.quantity - 1)
                       )
                     }
-                    className="px-2 py-1 bg-gray-200 cursor-pointer"
+                    className="px-4 py-2 bg-gray-200 cursor-pointer"
                   >
                     -
                   </button>
@@ -93,7 +91,7 @@ const ProductsList = () => {
                         quantity: (cartItem?.quantity || 0) + 1,
                       })
                     }
-                    className="px-2 py-1 bg-gray-200"
+                    className="px-4 py-2 bg-gray-200 cursor-pointer"
                   >
                     +
                   </button>
