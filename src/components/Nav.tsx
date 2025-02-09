@@ -28,6 +28,9 @@ const Nav = () => {
         {/* Desktop Menu */}
         <ul className="hidden md:flex gap-6 text-white">
           <li className="cursor-pointer hover:underline">
+            <a href="/">Home</a>
+          </li>
+          <li className="cursor-pointer hover:underline">
             <a href="#">About</a>
           </li>
           <li className="cursor-pointer hover:underline">
@@ -55,7 +58,7 @@ const Nav = () => {
           </div>
 
           <button
-            onClick={() => navigate("/AdminLogin")}
+            onClick={() => navigate("/Admin")}
             className="bg-black cursor-pointer px-6 py-2 bg-neutral-white text-white rounded-full sm:hover:bg-opacity-35 transition-all duration-300 ease-in-out"
           >
             Admin Login
@@ -78,6 +81,9 @@ const Nav = () => {
       {menuOpen && (
         <ul className="md:hidden flex flex-col items-center gap-4 mt-4 text-white">
           <li className="cursor-pointer hover:underline">
+            <li className="cursor-pointer hover:underline">
+              <a href="/">Home</a>
+            </li>
             <a href="#">About</a>
           </li>
           <li className="cursor-pointer hover:underline">
@@ -98,7 +104,7 @@ const Nav = () => {
             </div>
           </li>
           <button
-            onClick={() => navigate("/AdminLogin")}
+            onClick={() => navigate("/Admin")}
             className="bg-black cursor-pointer px-6 py-2 bg-neutral-white text-white rounded-full sm:hover:bg-opacity-35 transition-all duration-300 ease-in-out"
           >
             Admin Login
