@@ -1,7 +1,7 @@
 import ProductsList from "../components/ProductsList";
 import Nav from "../components/Nav";
-import Footer from "../components/Footer";
 import Testimonials from "../components/Testimonials";
+import Footer from "../components/Footer";
 
 const LandingPage = () => {
   return (
