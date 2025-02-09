@@ -2,8 +2,10 @@ import { useEffect } from "react";
 import { fetchProducts } from "../api/products";
 import { useProductStore } from "../store/useProductStore";
 import { useCartStore } from "../store/useCart";
+import { useNavigate } from "react-router-dom";
 
 const ProductsList = () => {
+  let navigate = useNavigate();
   const { products, setProducts } = useProductStore();
   const { addToCart, updateQuantity, cart } = useCartStore();
 
@@ -35,6 +37,12 @@ const ProductsList = () => {
               <p>Price: ${product.price}</p>
               {cartItem ? (
                 <div className="flex items-center gap-2 mt-2">
+                  <button
+                    onClick={() => navigate(`/product/${product.id}`)}
+                    className="mt-2 px-4 py-2 bg-green-500 text-white"
+                  >
+                    View Product
+                  </button>
                   <button
                     onClick={() =>
                       updateQuantity(

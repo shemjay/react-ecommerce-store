@@ -5,6 +5,7 @@ import LandingPage from "./pages/LandingPage.tsx";
 import Cart from "./pages/Cart.tsx";
 import AdminLogin from "./pages/AdminLogin.tsx";
 import AdminDashboard from "./pages/AdminDashboard.tsx";
+import ProductPage from "./pages/ProductPage.tsx";
 import "./index.css";
 
 createRoot(document.getElementById("root")!).render(
@@ -15,6 +16,7 @@ createRoot(document.getElementById("root")!).render(
         <Route path="/Cart" element={<Cart />} />
         <Route path="/Admin" element={<AdminLogin />} />
         <Route path="/AdminDashboard" element={<AdminDashboard />} />
+        <Route path="/product/:id" element={<ProductPage />} />
       </Routes>
     </Router>
   </StrictMode>

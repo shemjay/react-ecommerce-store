@@ -29,8 +29,11 @@ const Nav = () => {
 
           {/* Desktop Menu */}
           <ul className="hidden md:flex gap-6 text-white">
-            <li className="cursor-pointer hover:underline">
-              <a href="/">Home</a>
+            <li
+              onClick={() => navigate("/")}
+              className="cursor-pointer hover:underline"
+            >
+              <p className="hover:underline">Home</p>
             </li>
             <li className="cursor-pointer hover:underline">
               <a href="#">About</a>
